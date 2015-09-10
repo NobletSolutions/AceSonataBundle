@@ -3,6 +3,7 @@
     "type": "symfony-bundle",
     "description": "This bundle integrates the sonata admin panel and the ace bundle",
     "minimum-stability": "stable",
+    "license": "MIT",
     "authors": [
         {
             "name": "Nathanael David Noblet",
@@ -28,6 +29,6 @@
         "craue/formflow-bundle": "~3.0@dev"
     },
     "autoload": {
-        "psr-4": { "NS\\AceSonataBundle": "" }
-    },
+        "psr-4": { "NS\\AceSonataBundle\\": "" }
+    }
 }
