@@ -2,6 +2,9 @@
 VERSION 0  INITIAL RELEASE
 ==========================
 
+   Version 0.2 - Override SonataAdminBundle properly
+      30/03/2016 16:29  0.2.0  initial release
+
    Version 0.1 - Initial Release
       24/12/2015 13:32  0.1.1  Added sonata admin resources
       10/09/2015 15:03  0.1.0  initial release
