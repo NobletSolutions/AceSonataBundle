@@ -2,6 +2,9 @@
 VERSION 0  INITIAL RELEASE
 ==========================
 
+   Version 0.3 - Move templates to standard override positions
+      30/03/2016 16:38  0.3.0  initial release
+
    Version 0.2 - Override SonataAdminBundle properly
       30/03/2016 16:29  0.2.0  initial release
 
