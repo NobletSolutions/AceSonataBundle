@@ -1,4 +1,5 @@
 {% extends 'SonataAdminBundle:CRUD:base_list.html.twig' %}
+
 {% block list_filters %}
     {% if admin.datagrid.filters %}
         <div class="widget-box widget-color-blue">
@@ -48,6 +49,14 @@
             </div>
         </div>
     {% endif %}
+{% endblock %}
+
+{% block actions %}
+    {% spaceless %}
+        {% if admin.hasRoute('create') and admin.isGranted('CREATE')%}
+            {% include 'SonataAdminBundle:Core:create_button.html.twig' %}
+        {% endif %}
+    {% endspaceless %}
 {% endblock %}
 
 {% block table_footer %}
