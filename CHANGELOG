@@ -3,6 +3,7 @@ VERSION 0  INITIAL RELEASE
 ==========================
 
    Version 0.3 - Move templates to standard override positions
+      01/04/2016 12:32  0.3.4  Fix error message styling
       01/04/2016 10:20  0.3.3  fixed checkboxes
       01/04/2016 10:03  0.3.2  overide delete template
       01/04/2016 09:27  0.3.1  Markup and js fixes
