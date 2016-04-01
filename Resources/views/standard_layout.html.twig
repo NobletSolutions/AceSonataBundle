@@ -37,18 +37,13 @@
 
 {% block stylesheets %}
     <!-- base application asset -->
-    {{parent()}}
+    {{ parent() }}
 
-    {% set cssPool = [
-        'bundles/sonataadmin/vendor/select2/select2.css',
-        'bundles/sonataadmin/vendor/select2/select2-bootstrap.css',
-        'bundles/sonataadmin/vendor/x-editable/dist/bootstrap3-editable/css/bootstrap-editable.css',
-        'bundles/sonataadmin/css/styles.css',
-        'bundles/sonataadmin/css/layout.css'] %}
-    {% for css in cssPool %}
-        <link rel="stylesheet" href="{{ asset(css) }}" />
-    {% endfor %}
-
+    <link rel="stylesheet" href="{{ asset('/bundles/sonataadmin/vendor/select2/select2.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/bundles/sonataadmin/vendor/select2/select2-bootstrap.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/bundles/sonataadmin/vendor/x-editable/dist/bootstrap3-editable/css/bootstrap-editable.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/bundles/sonataadmin/css/styles.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/bundles/sonataadmin/css/layout.css') }}" />
 {% endblock %}
 
 {% block javascripts %}
@@ -62,18 +57,15 @@
         };
     </script>
 
-    {{parent()}}
+    {{ parent() }}
 
-    {% set scriptPool = ['bundles/sonataadmin/vendor/jquery.scrollTo/jquery.scrollTo.min.js',
-    'bundles/sonataadmin/jquery/jquery.form.js',
-    'bundles/sonataadmin/jquery/jquery.confirmExit.js',
-    'bundles/sonataadmin/vendor/x-editable/dist/bootstrap3-editable/js/bootstrap-editable.min.js',
-    'bundles/sonataadmin/vendor/select2/select2.min.js',
-    'bundles/sonataadmin/App.js',
-    'bundles/sonataadmin/Admin.js'] %}
-    {% for javascript in scriptPool %}
-        <script src="{{ asset(javascript) }}"></script>
-    {% endfor %}
+    <script src="{{ asset('/bundles/sonataadmin/vendor/jquery.scrollTo/jquery.scrollTo.min.js') }}"></script>
+    <script src="{{ asset('/bundles/sonataadmin/jquery/jquery.form.js') }}"></script>
+    <script src="{{ asset('/bundles/sonataadmin/jquery/jquery.confirmExit.js') }}"></script>
+    <script src="{{ asset('/bundles/sonataadmin/vendor/x-editable/dist/bootstrap3-editable/js/bootstrap-editable.min.js') }}"></script>
+    <script src="{{ asset('/bundles/sonataadmin/vendor/select2/select2.min.js') }}"></script>
+    <script src="{{ asset('/bundles/sonataadmin/App.js') }}"></script>
+    <script src="{{ asset('/bundles/sonataadmin/Admin.js') }}"></script>
 
     {# localize select2 #}
     {% if admin_pool is defined and admin_pool.getOption('use_select2') %}
