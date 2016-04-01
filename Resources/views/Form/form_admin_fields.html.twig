@@ -26,6 +26,10 @@ file that was distributed with this source code.
             {% set label = name|humanize %}
         {% endif %}
 
+        {% if form.vars.block_prefixes.1 == 'checkbox' %}
+            {% set label = '' %}
+        {% endif %}
+
         {% if in_list_checkbox is defined and in_list_checkbox and widget is defined %}
             <label{% for attrname,attrvalue in attr %} {{attrname}}="{{attrvalue}}"{% endfor %}>
                 {{ widget|raw }}
