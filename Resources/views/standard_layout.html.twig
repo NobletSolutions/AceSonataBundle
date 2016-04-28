@@ -46,7 +46,17 @@
     <link rel="stylesheet" href="{{ asset('/bundles/sonataadmin/css/layout.css') }}" />
 {% endblock %}
 
+{% block jqueryScripts %}{% endblock %}
+
 {% block javascripts %}
+    <!--[if !IE]> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- <![endif]-->
+
+    <!--[if IE]>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <![endif]-->
+    
     <script>
         window.SONATA_CONFIG = {
             CONFIRM_EXIT: {% if admin_pool is defined and admin_pool.getOption('confirm_exit') %}true{% else %}false{% endif %},
@@ -57,6 +67,9 @@
         };
     </script>
 
+    <script src="{{ asset('/bundles/sonataadmin/App.js') }}"></script>
+    <script src="{{ asset('/bundles/sonataadmin/Admin.js') }}"></script>
+
     {{ parent() }}
 
     <script src="{{ asset('/bundles/sonataadmin/vendor/jquery.scrollTo/jquery.scrollTo.min.js') }}"></script>
@@ -64,8 +77,6 @@
     <script src="{{ asset('/bundles/sonataadmin/jquery/jquery.confirmExit.js') }}"></script>
     <script src="{{ asset('/bundles/sonataadmin/vendor/x-editable/dist/bootstrap3-editable/js/bootstrap-editable.min.js') }}"></script>
     <script src="{{ asset('/bundles/sonataadmin/vendor/select2/select2.min.js') }}"></script>
-    <script src="{{ asset('/bundles/sonataadmin/App.js') }}"></script>
-    <script src="{{ asset('/bundles/sonataadmin/Admin.js') }}"></script>
 
     {# localize select2 #}
     {% if admin_pool is defined and admin_pool.getOption('use_select2') %}
