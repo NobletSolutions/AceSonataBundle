@@ -3,6 +3,7 @@ VERSION 0  INITIAL RELEASE
 ==========================
 
    Version 0.4 - Support SF3 and remove deprecated twig functions"
+      14/11/2016 10:38  0.4.1  Updated composer requirements
       14/11/2016 10:25  0.4.0  initial release
 
    Version 0.3 - Move templates to standard override positions
