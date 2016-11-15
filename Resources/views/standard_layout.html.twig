@@ -5,7 +5,7 @@
 {% set _editTabs = block('editTabs') %}
 {% block widget_title %}
     {% if _actions is not empty %}
-        <div class="widget-header widget-header-small">
+        <div class="widget-header">
             {% if _title is not empty %}
                 <h5 class="widget-title">{{ _title|raw }}</h5>
             {% else %}
@@ -137,7 +137,7 @@
                     {% endif %}
 
                     {% if _list_table is not empty or _list_filters is not empty %}
-                        <div class="row-fluid">
+                        <div class="row">
                             <div class="sonata-ba-list col-sm-9 col-md-9 col-lg-9">
                                 <div class="widget-box widget-color-blue no-border">
                                     {{ _widget_title|raw }}
