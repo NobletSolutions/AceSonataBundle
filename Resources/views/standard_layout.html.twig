@@ -39,11 +39,12 @@
     <!-- base application asset -->
     {{ parent() }}
 
-    <link rel="stylesheet" href="{{ asset('/bundles/sonataadmin/vendor/select2/select2.css') }}" />
-    <link rel="stylesheet" href="{{ asset('/bundles/sonataadmin/vendor/select2/select2-bootstrap.css') }}" />
-    <link rel="stylesheet" href="{{ asset('/bundles/sonataadmin/vendor/x-editable/dist/bootstrap3-editable/css/bootstrap-editable.css') }}" />
-    <link rel="stylesheet" href="{{ asset('/bundles/sonataadmin/css/styles.css') }}" />
-    <link rel="stylesheet" href="{{ asset('/bundles/sonataadmin/css/layout.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/bundles/sonatacore/vendor/select2/select2.css') }}">
+    <link rel="stylesheet" href="{{ asset('/bundles/sonatacore/vendor/select2-bootstrap-css/select2-bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/bundles/sonataadmin/vendor/x-editable/dist/bootstrap3-editable/css/bootstrap-editable.css') }}">
+    <link rel="stylesheet" href="{{ asset('/bundles/sonataadmin/css/styles.css') }}">
+    <link rel="stylesheet" href="{{ asset('/bundles/sonataadmin/css/layout.css') }}">
+    <link rel="stylesheet" href="{{ asset('/bundles/sonataadmin/css/tree.css') }}">
 {% endblock %}
 
 {% block jqueryScripts %}{% endblock %}
@@ -56,7 +57,7 @@
     <!--[if IE]>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <![endif]-->
-    
+
     <script>
         window.SONATA_CONFIG = {
             CONFIRM_EXIT: {% if admin_pool is defined and admin_pool.getOption('confirm_exit') %}true{% else %}false{% endif %},
@@ -67,16 +68,17 @@
         };
     </script>
 
-    <script src="{{ asset('/bundles/sonataadmin/App.js') }}"></script>
+    {#<script src="{{ asset('/bundles/sonataadmin/App.js') }}"></script>#}
     <script src="{{ asset('/bundles/sonataadmin/Admin.js') }}"></script>
 
     {{ parent() }}
 
     <script src="{{ asset('/bundles/sonataadmin/vendor/jquery.scrollTo/jquery.scrollTo.min.js') }}"></script>
-    <script src="{{ asset('/bundles/sonataadmin/jquery/jquery.form.js') }}"></script>
+    <script src="{{ asset('/bundles/sonataadmin/vendor/jquery-form/jquery.form.js') }}"></script>
     <script src="{{ asset('/bundles/sonataadmin/jquery/jquery.confirmExit.js') }}"></script>
     <script src="{{ asset('/bundles/sonataadmin/vendor/x-editable/dist/bootstrap3-editable/js/bootstrap-editable.min.js') }}"></script>
-    <script src="{{ asset('/bundles/sonataadmin/vendor/select2/select2.min.js') }}"></script>
+    <script src="{{ asset('/bundles/sonatacore/vendor/select2/select2.min.js') }}"></script>
+    <script src="{{ asset('/bundles/sonataadmin/treeview.js') }}"></script>
 
     {# localize select2 #}
     {% if admin_pool is defined and admin_pool.getOption('use_select2') %}
@@ -85,7 +87,7 @@
 
         {# omit default EN locale #}
         {% if locale[:2] != 'en' %}
-            <script src="{{ asset('bundles/sonataadmin/vendor/select2/select2_locale_' ~ locale|replace({'_':'-'}) ~ '.js') }}"></script>
+            <script src="{{ asset('bundles/sonatacore/vendor/select2/select2_locale_' ~ locale|replace({'_':'-'}) ~ '.js') }}"></script>
         {% endif %}
     {% endif %}
 
@@ -113,19 +115,19 @@
                         <div class="sonata-ba-preview">
                             {{ _widget_title|raw }}
                             {{ _preview|raw }}</div>
-                        {% endif %}
+                    {% endif %}
 
                     {% if _content is not empty %}
                         <div class="sonata-ba-content">
                             {{ _widget_title|raw }}
                             {{ _content|raw }}</div>
-                        {% endif %}
+                    {% endif %}
 
                     {% if _show is not empty %}
                         <div class="sonata-ba-show">
                             {{ _widget_title|raw }}
                             {{ _show|raw }}</div>
-                        {% endif %}
+                    {% endif %}
 
                     {% if _form is not empty %}
                         <div class="sonata-ba-form">
@@ -177,12 +179,12 @@
                                     </li>
                                 {% else %}
                                     <li class="active">{{ menu.label }}</li>
-                                    {% endif %}
-                                {% endfor %}
-                            {% endif %}
-                        {% else %}
-                            {{ _breadcrumb|raw }}
+                                {% endif %}
+                            {% endfor %}
                         {% endif %}
+                    {% else %}
+                        {{ _breadcrumb|raw }}
+                    {% endif %}
                 </ul>
             </div>
         {% endif %}
