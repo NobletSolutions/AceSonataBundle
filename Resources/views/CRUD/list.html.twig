@@ -182,7 +182,7 @@
 
     {# Add a margin if no pager to prevent dropdown cropping on window #}
     <div class="box box-primary" {% if admin.datagrid.pager.lastPage == 1 %}style="margin-bottom: 100px;"{% endif %}>
-        <div class="box-body {% if admin.datagrid.results|length > 0 %}table-responsive no-padding{% endif %}">
+        <div class="box-body {% if admin.datagrid.results|length > 0 %}table no-padding{% endif %}">
             {{ sonata_block_render_event('sonata.admin.list.table.top', { 'admin': admin }) }}
 
             {{ block('list_header') }}
