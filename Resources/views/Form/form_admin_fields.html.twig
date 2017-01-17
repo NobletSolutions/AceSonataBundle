@@ -12,7 +12,7 @@ file that was distributed with this source code.
 {# Labels #}
 {% block form_label %}
 {% spaceless %}
-    {% if label is not sameas(false) %}
+    {% if label is not same as(false) %}
         {% set label_attr = label_attr|merge({'class': label_attr.class|default('') ~ " control-label col-sm-3" }) %}
 
         {% if not compound %}
@@ -37,8 +37,8 @@ file that was distributed with this source code.
                     {% if not sonata_admin.admin %}
                         {{- label|trans({}, translation_domain) -}}
                     {% else %}
-                        {{- label|trans({}, sonata_admin.field_description.translationDomain) -}}
-                    {% endif%}
+                        {{ label|trans({}, sonata_admin.field_description.translationDomain ?: admin.translationDomain) }}
+                    {% endif %}
                 </span>
             </label>
         {% else %}
@@ -46,7 +46,7 @@ file that was distributed with this source code.
                 {% if not sonata_admin.admin%}
                     {{- label|trans({}, translation_domain) -}}
                 {% else %}
-                    {{ sonata_admin.admin.trans(label, {}, sonata_admin.field_description.translationDomain) }}
+                    {{ label|trans({}, sonata_admin.field_description.translationDomain ?: admin.translationDomain) }}
                 {% endif %}
                 {#{{ required ? '*' : '' }}#}
             </label>
@@ -130,7 +130,7 @@ file that was distributed with this source code.
     {% if sonata_admin is not defined or not sonata_admin_enabled or not sonata_admin.field_description %}
         <div class="form-group {% if errors|length > 0%} error{% endif %}">
             {{ form_label(form, label|default(null)) }}
-            <div class="col-sm-9 controls {% if label is sameas(false) %}sonata-collection-row-without-label{% endif %}">
+            <div class="col-sm-9 controls {% if label is same as(false) %}sonata-collection-row-without-label{% endif %}">
                 {{ form_widget(form) }}
                 {% if errors|length > 0 %}
                     <div class="help-inline sonata-ba-field-error-messages">
@@ -149,7 +149,7 @@ file that was distributed with this source code.
                 {% endif %}
             {% endblock %}
 
-            {% set has_label = sonata_admin.field_description.options.name is defined or label is not sameas(false) %}
+            {% set has_label = sonata_admin.field_description.options.name is defined or label is not same as(false) %}
             <div class="col-sm-9 controls sonata-ba-field sonata-ba-field-{{ sonata_admin.edit }}-{{ sonata_admin.inline }} {% if errors|length > 0 %}sonata-ba-field-error{% endif %} {% if not has_label %}sonata-collection-row-without-label{% endif %}">
 
                 {{ form_widget(form) }}
@@ -160,8 +160,8 @@ file that was distributed with this source code.
                     </div>
                 {% endif %}
 
-                {% if sonata_admin.field_description.help %}
-                    <span class="help-block sonata-ba-field-help">{{ sonata_admin.admin.trans(sonata_admin.field_description.help, {}, sonata_admin.field_description.translationDomain)|raw }}</span>
+                {% if sonata_admin is defined and sonata_admin_enabled and sonata_admin.field_description.help|default(false) %}
+                    <span class="help-block sonata-ba-field-help">{{ sonata_admin.field_description.help|trans({}, sonata_admin.field_description.translationDomain ?: admin.translationDomain)|raw }}</span>
                 {% endif %}
             </div>
         </div>

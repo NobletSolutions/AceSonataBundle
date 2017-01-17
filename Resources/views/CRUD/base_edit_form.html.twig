@@ -103,7 +103,7 @@
             <li class="{% if loop.first %}active{% endif %}">
                 <a href="#{{ admin.uniqid }}_{{ loop.index }}" data-toggle="tab">
                     <i class="fa fa-exclamation-sign has-errors hide"></i>
-                    {{ admin.trans(name, {}, form_group.translation_domain) }}
+                    {{ name|trans({}, form_group.translation_domain ?: admin.translationDomain) }}
                 </a>
             </li>
         {% endfor %}
