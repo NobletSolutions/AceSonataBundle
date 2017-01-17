@@ -2,6 +2,9 @@
 VERSION 2  ADD SONATA 3.0 SUPPORT
 =================================
 
+   Version 2.1 - Fix twig and sonata deprecations
+      17/01/2017 14:19  2.1.0  initial release
+
    Version 2.0 - Add sonata 3.0 support
       10/01/2017 15:51  2.0.3  Minor class fix
       03/01/2017 14:25  2.0.2  Fixed twig deprecations
