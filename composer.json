@@ -14,19 +14,18 @@
             "email": "mark.woynarski@nobletdesign.com"
         }
     ],
-
     "require": {
         "php":                          ">=5.3.3",
         "symfony/symfony":              "^2.8||^3.0",
-        "ns/ace-bundle":                "^1.5|^2.0",
-	"sonata-project/admin-bundle":  "^3.0"
+        "ns/ace-bundle":                "^1.5|^2.0|^3.0",
+	    "sonata-project/admin-bundle":  "^3.0"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.0",
         "liip/rmt": "~1.1"
     },
     "autoload": {
-        "psr-4": { "NS\\AceSonataBundle\\": "" }
+        "psr-4": { "NS\\AceSonataBundle\\": "src" }
     }
 }
 
