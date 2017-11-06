@@ -40,8 +40,7 @@
     <!-- base application asset -->
     {{ parent() }}
 
-    <link rel="stylesheet" href="{{ asset('/bundles/sonatacore/vendor/select2/select2.css') }}">
-    <link rel="stylesheet" href="{{ asset('/bundles/sonatacore/vendor/select2-bootstrap-css/select2-bootstrap.min.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('/bundles/sonataadmin/vendor/x-editable/dist/bootstrap3-editable/css/bootstrap-editable.css') }}">
     <link rel="stylesheet" href="{{ asset('/bundles/sonataadmin/css/styles.css') }}">
     <link rel="stylesheet" href="{{ asset('/bundles/sonataadmin/css/layout.css') }}">
@@ -83,7 +82,7 @@
     <script src="{{ asset('/bundles/sonataadmin/vendor/jquery-form/jquery.form.js') }}"></script>
     <script src="{{ asset('/bundles/sonataadmin/jquery/jquery.confirmExit.js') }}"></script>
     <script src="{{ asset('/bundles/sonataadmin/vendor/x-editable/dist/bootstrap3-editable/js/bootstrap-editable.min.js') }}"></script>
-    <script src="{{ asset('/bundles/sonatacore/vendor/select2/select2.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
     <script src="{{ asset('/bundles/sonataadmin/treeview.js') }}"></script>
 
     {# localize select2 #}
