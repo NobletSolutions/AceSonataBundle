@@ -3,6 +3,7 @@ VERSION 2  ADD SONATA 3.0 SUPPORT
 =================================
 
    Version 2.1 - Fix twig and sonata deprecations
+      13/11/2018 14:44  2.1.7  Updated to handle newer sonata
       18/06/2018 12:06  2.1.6  Update form template
       06/11/2017 10:51  2.1.5  Visual fix
       03/03/2017 12:38  2.1.4  Update Select2 version
